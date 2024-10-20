@@ -13,3 +13,4 @@ const unsigned long totMaxTime = 2 * 60 * 1000; // 2 minutes (ms)
 line in the main.cpp.
 
 In several places the comments are written in Hungarian. Sorry but it was easier for me. :)
+HA5SZI Istvan
