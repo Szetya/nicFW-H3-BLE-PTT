@@ -5,18 +5,25 @@
 #define BLE_COMM_CHARACTERISTIC_NOTIFY  "0000FF01-0000-1000-8000-00805F9B34FB"
 #define BLE_COMM_CHARACTERISTIC_WRITE   "0000FF02-0000-1000-8000-00805F9B34FB"
 
-// Lámpa parancsok
+// Battery
+#define CMD_READ_BATTERY            0x32    // Read battery radio>host Ack = 0x32, byte[2] 16 bit unsigned little endian
+// 
 #define CMD_DISABLE_RADIO_CHIP      0x45    // Disable radio chip - Ack = 0x45
 #define CMD_ENABLE_RADIO_CHIP       0x46    // Enable radio chip - Ack = 0x46
+// Lámpa parancsok
 #define CMD_TURN_ON_FLASHLIGHT      0x47    // Lámpa bekapcsolása
 #define CMD_TURN_OFF_FLASHLIGHT     0x48    // Lámpa kikapcsolása
+// Reset command
 #define CMD_RESET_RADIO             0x49    // RESET Radio
-
+// Remote Sart / Stop
 #define CMD_START_REMOTE            0x4A    // Start Remote Session
-#define CMD_END_REMOTE              0x4B    // End Remote Session
+#define CMD_END_REMOTE              0x4B    // End Remote Session > Command mode
 
 // Screen Commands
-#define CMD_DRAW_TEXT               0x77    // Szöveg kirajzolása
+#define CMD_DRAW_TEXT               0x77    // Szöveg
+#define CMD_FILL_REGION             0x78    // Régió kitöltés
+#define CMD_SMETER_LEVEL            0x79    // S Meter Level
+#define CMD_NOISEMETER_LEVEL        0x7A    // Noise Meter Level
 
 // Channel Commands
 #define CMD_READ_CHANNEL            0x30    // 0x30 byte[1]+1 channel number /radio > host: 0x30 byte[12] channel block byte[1] checksum of channel data
